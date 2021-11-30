@@ -1,11 +1,19 @@
+import { Fruit } from '../../models/Fruit'
+
 interface Props {
-	fruits: string[];
+	fruits: Fruit[];
 }
+
 
 const SearchResults = ({ fruits }: Props) => (
 	<div>
-		search results
+		{fruits.map(fruit => (
+			<div key={fruit.id}>
+				{fruit.name}
+			</div>
+		))}
 	</div>
 )
+
 
 export default SearchResults
